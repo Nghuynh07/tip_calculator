@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+  .calculator {
+    flex-wrap: wrap;
+    padding: 1.5rem !important;
+  }
+
+  .bill {
+    &__tip {
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)) !important;
+    }
+  }
+
+  .tip {
+    &__reset {
+      margin-top: 5rem;
+    }
+  }
+}
+
+@media (max-width: 449px) {
+  .bill {
+    &__tip {
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)) !important;
+    }
+  }
+
+  .tip {
+    &__reset {
+      margin-top: 5rem;
+    }
+  }
+}

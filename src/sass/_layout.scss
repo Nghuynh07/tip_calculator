@@ -1,0 +1,160 @@
+@use "base" as *;
+.main {
+  min-height: 100vh;
+  background-color: $light-grayish-cyan;
+  padding: 5rem 0;
+  &__logo {
+    width: fit-content;
+    margin: 5rem auto;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .calculator {
+    max-width: 92rem;
+    background-color: $white;
+    border-radius: 2rem;
+    margin: auto;
+    padding: $small-padding;
+    gap: $small-padding;
+    filter: drop-shadow(0 0 1rem rgba(0 0 0 / 0.06));
+    display: flex;
+  }
+
+  .bill {
+    width: $full-width;
+    @include flexColumnAlign(space-evenly);
+    gap: 4rem;
+
+    &__infos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__error {
+      font-size: $regular-text-font;
+      color: $error-color;
+    }
+
+    &__total {
+      @include billInputColumnDisplayWithGap;
+    }
+
+    &__input {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: $very-light-grayish-cyan;
+
+      input {
+        width: 100%;
+        margin-left: 1rem;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: inherit;
+        @include billRegularFontStyle(right);
+        &::placeholder {
+          color: $input-color;
+          font-size: $bill-font-Size;
+        }
+      }
+    }
+    &__text {
+      font-size: $regular-text-font;
+      text-transform: capitalize;
+      color: #5e7a7d;
+    }
+
+    &__tips {
+    }
+
+    &__tip {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      gap: 1rem;
+    }
+
+    &__btn {
+      padding: 0.7rem 1.5rem;
+      background-color: $very-dark-cyan;
+      color: $white;
+      border-radius: 0.5rem;
+      font-size: $bill-font-Size;
+      transition: background-color 0.2s, color 0.2s;
+      cursor: pointer;
+      &:hover {
+        background-color: #9fe8df;
+        color: $very-dark-cyan;
+      }
+    }
+    &__customInput {
+      //   text-align-last: right;
+      color: $input-color;
+      font-size: $bill-font-Size;
+      text-align: center;
+      &::placeholder {
+        text-transform: capitalize;
+        @include billRegularFontStyle(right);
+      }
+    }
+    &__count {
+      @include billInputColumnDisplayWithGap;
+    }
+  }
+
+  .tip {
+    width: $full-width;
+    padding: $small-padding;
+    background-color: $very-dark-cyan;
+    border-radius: 1.5rem;
+    @include flexColumnAlign(space-between);
+
+    &__amount {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__perPerson {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__text {
+      font-size: $regular-text-font;
+      color: $white;
+    }
+
+    &__each {
+      font-size: 1.3rem;
+      color: $grayish-cyan;
+    }
+
+    &__amountDisplay {
+      font-size: clamp(3.2rem, 2.5vw + 0.55rem, 4.8rem);
+      color: $strong-cyan;
+    }
+
+    &__reset {
+      padding: 0.8rem 0;
+      background-color: $strong-cyan;
+      color: $very-dark-cyan;
+      font-size: 2rem;
+      text-transform: uppercase;
+      transition: background-color 0.2s;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $light-grayish-cyan;
+      }
+    }
+  }
+}
