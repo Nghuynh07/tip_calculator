@@ -1,5 +1,8 @@
 import dollar from "./../images/icon-dollar.svg";
 import person from "./../images/icon-person.svg";
+import Button from "./Button";
+import { data } from "../data/data";
+
 const Bill = ({
   bill,
   billOnChange,
@@ -27,7 +30,6 @@ const Bill = ({
             value={bill}
             type='number'
             onChange={billOnChange}
-            placeholder='0'
             onFocus={billFocus}
             onBlur={onBlur}
             step='0.01'
@@ -37,21 +39,15 @@ const Bill = ({
       <div className='bill__tips'>
         <p className='bill__text'>select tip %</p>
         <div className='bill__tip'>
-          <button className='bill__btn' data-tip='0.05' onClick={onChangeTip}>
-            5%
-          </button>
-          <button className='bill__btn' data-tip='0.1' onClick={onChangeTip}>
-            10%
-          </button>
-          <button className='bill__btn' data-tip='0.15' onClick={onChangeTip}>
-            15%
-          </button>
-          <button className='bill__btn' data-tip='0.25' onClick={onChangeTip}>
-            25%
-          </button>
-          <button className='bill__btn' data-tip='0.5' onClick={onChangeTip}>
-            50%
-          </button>
+          {data.map((d) => (
+            <Button
+              key={d.dataset}
+              className='bill__btn'
+              tipPercent={d.tip}
+              dataTip={d.dataset}
+              onChangeTip={onChangeTip}
+            />
+          ))}
           <input
             className='bill__customInput'
             type='numeric'

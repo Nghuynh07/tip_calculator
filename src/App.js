@@ -5,17 +5,17 @@ import { useCallback } from "react";
 
 function App() {
   // states
-  const [count, setCount] = useState(Number(""));
-  const [bill, setBill] = useState(Number(""));
-  const [tip, setTip] = useState(Number(""));
-  const [tipPP, setTipPP] = useState(Number(""));
-  const [totalPP, setTotalPP] = useState(Number(""));
-  const [isTrue, setIsTrue] = useState(false);
-  const [customTip, setCustomTip] = useState("");
+  const [count, setCount] = useState(0);
+  const [bill, setBill] = useState(0);
+  const [tip, setTip] = useState(0);
+  const [tipPP, setTipPP] = useState(0);
+  const [totalPP, setTotalPP] = useState(0);
+  const [customTip, setCustomTip] = useState(0);
+  const [error, setError] = useState("");
   const [isCustomInput, setIsCustomInput] = useState(false);
   const [isBillFocus, setIsBillFocus] = useState(false);
-  const [error, setError] = useState("");
   const [isBlur, setIsBlur] = useState(true);
+  const [isTrue, setIsTrue] = useState(false);
   const [isCountFocus, setIsCountFocus] = useState(false);
 
   const billFocus = () => {
@@ -49,8 +49,8 @@ function App() {
 
   // bill input
   const billOnChange = (e) => {
-    const tipInput = Number(e.target.value);
-    setBill(tipInput);
+    const tipInput = e.target.value;
+    setBill(Number(tipInput));
   };
 
   // custom tip input
