@@ -18,10 +18,13 @@ function App() {
   const [isTrue, setIsTrue] = useState(false);
   const [isCountFocus, setIsCountFocus] = useState(false);
 
+  // When user focuses on bill input
+
   const billFocus = () => {
     setIsBillFocus(true);
     setIsBlur(false);
   };
+  // when an input is out of focus/ onblur
 
   const onBlur = () => {
     setIsBillFocus(false);
@@ -29,6 +32,8 @@ function App() {
     setIsBlur(true);
     if (isBlur) setError("");
   };
+
+  // When user focuses on total person count input
 
   const countFocus = () => {
     if (count <= 0) setError("Can't be zero");
@@ -38,13 +43,13 @@ function App() {
 
   // reset
   const onReset = useCallback(() => {
-    setCount(Number(""));
-    setBill(Number(""));
-    setTip(Number(""));
-    setTipPP(Number(""));
-    setTotalPP(Number(""));
+    setCount(0);
+    setBill(0);
+    setTip(0);
+    setTipPP(0);
+    setTotalPP(0);
     setIsTrue(false);
-    setCustomTip("");
+    setCustomTip(0);
   }, []);
 
   // bill input
