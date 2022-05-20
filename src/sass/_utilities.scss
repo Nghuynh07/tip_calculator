@@ -1,0 +1,14 @@
+@use "base" as *;
+
+.active {
+  background-color: #26c2ae !important;
+  color: #00474b !important;
+}
+
+.focus {
+  border: 0.2rem solid #26c2ae !important;
+}
+
+.countError {
+  border: 0.2rem solid $error-color !important;
+}
