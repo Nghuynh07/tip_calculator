@@ -27,7 +27,7 @@ function App() {
     setIsBillFocus(false);
     setIsCountFocus(false);
     setIsBlur(true);
-    setError("");
+    if (isBlur) setError("");
   };
 
   const countFocus = () => {
