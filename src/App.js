@@ -44,6 +44,7 @@ function App() {
     setTipPP(Number(""));
     setTotalPP(Number(""));
     setIsTrue(false);
+    setCustomTip("");
   }, []);
 
   // bill input
